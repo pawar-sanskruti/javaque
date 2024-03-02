@@ -1,0 +1,33 @@
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class linkedlist2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Accept n integers from the user
+        System.out.print("Enter the number of elements (n): ");
+        int n = scanner.nextInt();
+
+        LinkedList<Integer> numberList = new LinkedList<>();
+
+        // Accept and add integers to the linked list
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter element " + (i + 1) + ": ");
+            int num = scanner.nextInt();
+            numberList.add(num);
+        }
+
+        // Display only negative integers from the linked list
+        System.out.println("Negative Integers:");
+
+        for (int num : numberList) {
+            if (num < 0) {
+                System.out.println(num);
+            }
+        }
+
+
+    }
+}
