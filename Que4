@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class treeset {
+    public static void main(String args[]) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Accept n integers from the user
+        System.out.print("Enter the number of elements(n):");
+        int n = scanner.nextInt();
+
+        TreeSet<Integer> ts = new TreeSet<>();
+
+        // Accept and add elements to the set
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter element " + (i + 1) + ": ");
+            int element = scanner.nextInt();
+            ts.add(element);
+        }
+
+        // Display elements in sorted order
+        System.out.println("Elements in Sorted Order: " + ts);
+
+        // Search for a particular element
+        System.out.print("Enter the element to search: ");
+        int searchElement = scanner.nextInt();
+
+        // Using the contains method to check if the element is present in the set
+        if (ts.contains(searchElement)) {
+            System.out.println(searchElement + " is present in the collection.");
+        } else {
+            System.out.println(searchElement + " is not present in the collection.");
+        }
+
+
+    }
+}
