@@ -1,0 +1,24 @@
+
+import java.util.TreeSet;
+
+class  treeset2{
+    public static void main(String[] args) {
+        // Create a TreeSet to store colors in ascending order
+        TreeSet<String> ts = new TreeSet<>();
+
+        // Add some colors to the TreeSet
+        ts.add("Red");
+        ts.add("Green");
+        ts.add("Blue");
+        ts.add("Yellow");
+        ts.add("Orange");
+
+        System.out.println(ts);
+
+        // Print the content of TreeSet in ascending order
+        System.out.println("Colors in Ascending Order:");
+        for (String color : ts) {
+            System.out.println(color);
+        }
+    }
+}
