@@ -1,6 +1,4 @@
-
 import java.util.TreeSet;
-
 class  treeset2{
     public static void main(String[] args) {
         // Create a TreeSet to store colors in ascending order
