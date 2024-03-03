@@ -1,0 +1,27 @@
+public class ThreadInfo {
+    public static void main(String[] args) {
+        // Create a new thread
+        Thread thread = new Thread(new MyRunnable());
+
+        // Set thread name
+        thread.setName("MyThread");
+
+        // Set thread priority
+        thread.setPriority(Thread.MAX_PRIORITY);
+
+        // Start the thread
+        thread.start();
+
+        // Display thread name and priority
+        System.out.println("Thread Name: " + thread.getName());
+        System.out.println("Thread Priority: " + thread.getPriority());
+    }
+
+    static class MyRunnable implements Runnable {
+        @Override
+        public void run() {
+            // Some task for the thread to perform
+            System.out.println("Thread is running...");
+        }
+    }
+}
