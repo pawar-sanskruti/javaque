@@ -1,0 +1,44 @@
+
+
+class TrafficSignal implements Runnable {
+    private String color;
+    private int duration;
+
+    public TrafficSignal(String color, int duration) {
+        this.color = color;
+        this.duration = duration;
+    }
+
+    @Override
+    public void run() {
+        try {
+            System.out.println(color + " light is on");
+            Thread.sleep(duration);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+public class TrafficSignalSimulator {
+    public static void main(String[] args) {
+        Thread redThread = new Thread(new TrafficSignal("Red", 5000)); // 5 seconds
+        Thread yellowThread = new Thread(new TrafficSignal("Yellow", 2000)); // 2 seconds
+        Thread greenThread = new Thread(new TrafficSignal("Green", 7000)); // 7 seconds
+
+        try {
+            redThread.start();
+            redThread.join();
+
+            yellowThread.start();
+            yellowThread.join();
+
+            greenThread.start();
+            greenThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
